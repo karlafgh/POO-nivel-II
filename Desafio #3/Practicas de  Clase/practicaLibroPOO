@@ -1,0 +1,64 @@
+clase Libro
+	privado definir nombre como caracter
+	privado definir año como entero 
+	
+	publico metodo determinarPrecio() como real
+		si año<2005 entonces
+			retornar 25
+		sino 
+			si año<=2010 entonces
+			retornar 30
+			sino 
+				si año<=2015 entonces
+					retornar 35
+				sino
+					retornar 45
+				finsi	
+			finsi
+		finsi			
+	fin metodo
+
+	publico metodo getNombre() como caracter
+		retornar nombre
+	fin metodo
+	
+	publico metodo setNombre (n)
+		nombre = n
+	fin metodo
+	
+	publico metodo getAño() como entero
+		retornar año
+	fin metodo
+	
+	publico metodo setNombre (a)
+		año = a
+	fin metodo
+	
+	publico metodo libro ()
+		mombre = "Sin titulo"
+		año = 2000
+	fin metodo
+	
+	publico metodo Libro (n,a)
+		nombre= n
+		año = a
+	fin metodo
+fin clase
+
+Algoritmo 
+	definir book, book2 como Libro
+	definir x
+	definir y
+	
+	book2 = nuevo Libro
+	
+	mostrar "¿Cual es el nombre del Libro?"
+	leer x
+	mostrar ""
+	mostrar "¿Cual es el año del libro?"
+	leer y
+	
+	book = nuevo Libro () // se ejecuta el constructor por defecto
+	
+	mostrar "Introduzca el nombre                            
+Fin Algoritmo

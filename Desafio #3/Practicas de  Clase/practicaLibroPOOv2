@@ -1,0 +1,71 @@
+  
+clase Libro
+	privado definir nombre como caracter
+	privado definir año como caracter
+	
+	publico metodo determinarPrecio() como entero
+		si año < 2005 entonces
+			retornar 25
+		sino
+			si año <=2010 entonces
+			retornar 30
+			sino
+				si año <=2015 entonces
+					retornar 35
+				sino
+					retornar 45
+				fin si
+			fin si
+		fin si	
+	fin metodo
+	
+	publico metodo Libro()
+		nombre = "Sin titulo"
+		año = 2000
+	fin metodo+
+	
+	publico metodo Libro(n,a)
+		nombre = n
+		año = a	
+	fin metodo
+	
+	publico metodo getNombre()
+		retornar nombre
+	fin metodo
+	
+	publico metodo setNombre(nuevoNombre)
+		nombre = nuevoNombre
+	fin metodo
+	
+	publico metodo getAño()
+		retornar año
+	fin metodo
+	
+	publico metodo setAño(nuevoAño)
+		año = nuevoAño
+	fin metodo
+fin clase
+
+Algoritmo Libro
+	definir libro1, libro2 como Libro
+	definir nombre como caracter
+	definir año como entero
+	
+	Mostrar "Ingrese el nombre del libro a comprar"
+	leer nombre
+	Mostrar "Ingrese el año que se hizo el libro"
+	leer año
+	
+	libro1 = nuevo Libro (nombre, año)
+	libro2 = nuevo Libro ()
+	
+	libro2.setNombre(nombre)
+	libro2.setAño(año)//aqui estamos determinando que el nombre que se obtendra cuando se llame el get sera el que el usuario ingrese.
+	
+	
+	Mostrar "El nombre del libro nro 1 es " libro1.getNombre()
+	Mostrar "El precio del libro nro1 es " libro1.determinarPrecio()
+	Mostrar "El nombre del libro nro 2 es " libro2.getNombre()
+	Mostrar "El precio del libro nro 2 es " libro2.determinarPrecio()
+	
+fin algoritmo

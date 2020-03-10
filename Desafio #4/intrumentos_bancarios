@@ -1,0 +1,25 @@
+clase intrumentosBancarios
+	protegido definir porcentaje_interes como real
+	protegido definir fecha_adquirida como Fecha
+	
+	publico metodo intrumentosBancarios()
+		porcentaje_interes = 0
+		fecha_adquirida = nuevo Fecha()
+	fin metodo
+	
+	publico metodo setFechaAdquirida(f)
+		fecha_adquirida = f
+	fin metodo
+	
+	publico metodo getFechaAdquirida() como fecha
+		retornar fecha_adquirida
+	fin metodo
+	
+	publico metodo setPorcentajeInteres(p)
+		porcentaje_interes = p
+	fin metodo 
+	
+	publico metodo getPorcentajeInteres() comno real
+		retornar porcentaje_interes
+	fin metodo 
+fin clase

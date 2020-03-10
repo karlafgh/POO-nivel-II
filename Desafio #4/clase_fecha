@@ -1,0 +1,41 @@
+clase Fecha
+	privado definir dia, mes, anio como numero
+	
+	//constructor por defecto.
+	publico metodo Fecha()
+		dia = 06
+		mes = 12
+		anio = 2019
+	fin metodo
+	
+	//constructor con parametros.
+	publico metodo Fecha(d,m,a)
+		dia = d
+		mes = m
+		anio = a
+	fin metodo
+	
+	publico setDia(d)
+		dia = d
+	fin metodo
+	
+	publico getDia() como numero
+		retornar dia
+	fin metodo
+	
+	publico setMes(m)
+		mes = m
+	fin metodo
+	
+	publico getMes() como numero
+		retornar mes
+	fin metodo
+	
+	publico setAnio(a)
+		anio = a
+	fin metodo
+	
+	publico getAnio() como numero
+		retornar anio
+	fin metodo
+fin clase 

@@ -1,0 +1,118 @@
+Clase Pantalon
+	Privado Definir tipo_pant Como Caraceter
+	Privado Definir precio_pant Como Caracter
+	
+    Publico Metodo getTipo_pant() Como Caracter      //Usando Getter
+        retornar tipo_pant
+    FinMetodo
+
+	Publico Metodo leerTipoPantalon()
+		Mostrar "Ingrese el Tipo de Pantalon"
+		leer tipo_pant
+	FinMetodo
+	
+	Publico Metodo determinarPrecio() Como Real
+		Si Mayuscula(tipo_pant)== "A" entonces
+			retornar 141.246
+		SiNo
+			Si Mayuscula(tipo_pant) == "B" entonces
+				retornar 96720
+			SiNo 
+				retornar 58900
+			FinSi		
+		FinSi		
+	FinMetodo
+FinClase
+
+Clase Cliente
+	Privado Definir nombre_cliente Como Caracter
+	Privado Definir sexo Como Caracter
+                                                          //Getter y Setter//
+    Publico Metodo getNombre_cliente() Como Caracter
+        retornar nombre_cliente
+    FinMetodo
+
+    Publico Metodo setNombre_cliente() Como Caracter
+        nombre_cliente= nuevoNombre
+    FinMetodo
+
+    Publico Metodo getSexo() Como Caracter
+        retornar sexo
+    FinMetodo
+
+    Publico Metodo setSexo() Como Caracter
+        sexo= nuevoSexo
+    FinMetodo
+
+    Publico Metodo getCliente() Como Cliente
+        retornar cliente
+    FinMetodo
+                                                          // Getter y Setter
+    Publico Metodo esMujer() Como Logico
+        retornar mayusculas(sexo) == "F"
+    FinMetodo
+
+    Publico Metodo leerDatos()
+        Mostrar "Ingrese el Nombre del Cliente"
+        Repetir                                              //Usando Ciclos
+            leer nombre_cliente
+            Mostrar "Ingrese Sexo"
+        Hasta  .....
+    FinMetodo
+FinClase
+
+Clase Venta
+	Privado Definir cliente Como Cliente
+	Privado Definir pantalon Como Pantalon
+	Privado Definir cant_pantalon Como Entero
+	
+    Publico Metodo getPantalon() Como Caracter
+        retornar pantalon
+    FinMetodo 
+
+    Privado Metodo leerCantidad()
+        Mostrar "Ingrese la Cantidad"
+        Leer cant_pantalon
+    FinMetodo
+
+    Publico Metodo calcularSubTotal() Como Real     //A las funciones se les colocan un tipo de dato// 
+        retornar pantalon.determinarPrecio()*cant_pantalon
+    FinMetodo
+
+    Publico Metodo calcularDescuento()
+        Si cliente.esMujer() == verdadero y cant_pantalon > 6 entonces
+            retornar calcularSubTotal()*0.1
+        Sino 
+            retornar 0
+        FinSi
+    FinMetodo
+
+    Publico Metodo calcularMontoTotal() Como Real
+        retornar calcularSubTotal() - calcularDescuento() + calcularIVA()
+    FinMetodo
+
+    Publico Metodo procesarVenta()
+        cliente.leerDatos()
+        repetir 
+            pantalon.leerTipoPantalon()
+            leerCantidad()
+        hasta .....
+    FinMetodo
+FinClase
+
+Algoritmo Practica1_Clase3
+    Definir vent Como Venta
+
+    vent = Nuevo Venta()
+	
+    Repetir                                                // Otro Ciclo //
+        vent.procesarVenta()
+        v.getNombre_cliente().setNombre_cliente (Jose Luis)   // Usando Seter //
+        Mostrar "El SubTotal es: " v.calcularSubTotal()
+        Mostrar "Descuento Realizado: " v.calcularDescuento()
+        Mostrar "El Cliente " v.getCliente().getNombre_cliente      //Usando Getter en Alg. Principal
+        Mostrar "El Tipo de Pantalon es: " v.getPantalon().getTipo_pant()
+        Mostrar "El Monto a Pagar es: " v.calcularMontoTotal
+        leer respuesta
+    hasta respuesta == "N" 
+FinAlgoritmo

@@ -1,0 +1,102 @@
+clase Boleto 
+	definir tipoBoleto como carácter
+	definir cantidadBoleto, monto_pre_desc, montoDesc, montoTotal como real
+	definir vip, preferencial, general como entero
+	
+	tipoBoleto=Mayusculas(tipoBoleto)
+	vip=500000
+	preferencial=300000
+	general=150000
+	
+
+	método ingresarDatos ()
+		mostrar "Ingresar tipo de boleto que desea comprar:"
+		mostrar "[V]ip"
+		mostrar "[P]referencial"
+		mostrar "[G]eneral"
+		leer tipoBoleto
+		mostrar “Ingresar la cantidad de boletos a comprar”
+		leer cantidadBoleto
+	fin método
+	
+	//en el siguiente método se va a realizar un caculo para conocer el monto pre descuento.
+	método calcularMontoPreDesc ()
+		Segun tipoBoleto hacer
+			"V": monto_pre_desc=vip*cantidadBoleto
+		
+			"P": monto_pre_desc=preferencial*cantidadBoleto
+		
+			"G": monto_pre_desc=general*cantidadBoleto
+			
+		Fin segun
+	fin método
+	
+	//en este método se dará a conocer el monto del descuento que corresponde.
+	metodo calcularDescuento ()
+		
+		Si precioBoleto<=400.000 entonces
+		montoDesc=montoTotal*0.05
+		
+		Sino
+			Si precioBoleto>=1.400.000 y precioBoleto<= 1.800.000 entonces
+			montoDesc=montoTotal*0.07
+			
+			Sino 
+				Si precioBoleto>=2.400.000 entonces
+				montoDesc=montoTotal*0.10
+				
+				Sino 
+						Si (precioBoleto>=400.000 y precioBoleto<=1.400.000) o  (precioBoleto>=1.800.000 y precioBoleto<2.400.000) entonces
+							montoDesc=montoTotal*0.13
+		
+	 finsi finsi finsi  finsi
+	fin método
+	
+	//en este método se va a calcular el monto total del usuario aplicando el descuento correspondiente.
+	método calcularMontoTotal ()
+	
+		Si precioBoleto <=400.000 entonces
+		montoTotal=precioBoleto*0.95
+		
+		Sino
+			Si precioBoleto>=1.400.000 y precioBoleto<= 1.800.000 entonces
+			montoTotal=precioBoleto*0.93
+			
+			Sino 
+				Si precioBoleto>=2.400.000 entonces
+				montoTotal =precioBoleto*0.90
+				
+				Sino 
+						Si (precioBoleto>=400.000 y precioBoleto<=1.400.000) o  (precioBoleto>=1.800.000 y precioBoleto<2.400.000) entonces
+							montoTotal =precioBoleto*0.87
+		
+	 finsi finsi finsi  finsi
+	fin método
+
+	//este método lo hice con el proposito de imprimir las salidas.
+	metodo mostrarFactura ()
+		mostrar "El precio del boleto es: " precioBoleto " BsS"
+		mostrar ""
+		mostrar "La cantidad de boletos es: " cantidadBoleto
+		mostrar ""
+		mostrar "El monto predescuento es de: " monto_pre_desc " BsS"
+		mostrar ""
+		mostrar "El monto del descuento es de: " montoDesc " BsS"
+		mostrar ""
+		mostrar "El monto a pagar  es: " montoTotal " BsS"
+	fin metodo
+fin clase
+
+Algoritmo
+	definir ticket como Boleto
+	ticket=nuevo Boleto ()
+
+	//realice el llamado a los métodos.
+	ticket.ingresarDatos()
+	ticket.calcularMontoPreDesc()
+	ticket.calcularDescuento ()
+	ticket.calcularMontoTotal()
+	ticket.mostrarFactura()
+Fin algoritmo
+
+

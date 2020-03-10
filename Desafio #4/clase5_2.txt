@@ -1,0 +1,27 @@
+incluir clase5_practica5
+incluir clase5_3
+
+algoritmo clase5
+	definir placa, comb como caracter
+	definir a como Auto
+	definir b como AutoBus
+	
+	a = nuevo Auto()
+	b = nuevo AutoBus()
+	
+	mostrar "Introduzca la placa:"
+	leer placa
+	a.setPlaca(placa)//lo leemos y luego pasamos por parametro el valor que dió el usuario.
+	b.setPlaca(placa) //o puede ser un parametro fijo -> b.setPlaca("xyz-457") 
+	
+	mostrar "Introduzca el tipo de combustible:"//opcion 1 de como hacerlo.
+	leer comb
+	a.getMotor().setCombustible(comb)//lo leemos y luego pasamos por parametro el valor que dió el usuario. 
+	
+	a.getMotor().setCombustible("gasoil")//opcion 2 de como hacerlo.
+	
+	mostrar "Introduzca el color del auto:"
+	leer a.color
+	a.color = "amarillo"//se puede hacer de esta forma porque el atributo es publico.
+	
+fin algoritmo

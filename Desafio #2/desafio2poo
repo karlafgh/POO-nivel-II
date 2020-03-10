@@ -1,0 +1,103 @@
+clase Avion 
+	definir codigo como alfanumérico
+	definir capPasajeros como entero
+	definir kilometraje, capCombustible como real
+	
+	metodo leerDatos ()
+		mostrar "ingrese el código del avión"
+		leer cogigo
+		mostrar "Ingrese la capacidad de pasajeros del avión"
+		leer capPasajeros
+		mostrar "Por favor indique el kilometraje del avión"
+		leer kilometraje 
+		mostrar "Indique la capacidad de combustible que tiene el avión"
+		leer capComustible
+		mostrar ""
+		mostrar "presione una tecla para continuar"
+		esperar tecla
+		limpiar pantalla
+	fin metodo
+fin clase
+ 
+clase Piloto
+	definir nombre como carácter
+	definir edad como entero
+	definir sexo 
+	
+	nombre=Mayusculas(nombre)
+	
+	//el siguiente método es para la obtencón de datos importantes del piloto.
+	método registrarPiloto ()
+		mostrar "Introduzca el nombre del piloto"
+		leer nombre
+		mostrar "Ingrese la edad del piloto " nombre
+		leer edad 
+		mostrar "¿Es el genero del piloto [M]asculino o [F]emenino?"
+		leer sexo+
+		esperar 1 segundo 
+		borrar pantalla
+	fin método
+fin clase
+
+clase Vuelo 
+	definir destino, aeroptoDestino como carácter
+	definir cantPasajeros, precio como entero
+	definir horaSalida como time
+	definir piloto como Piloto
+	definir avion como Avion
+	
+	//metodo para registrar datos esenciales del vuelo.
+	método ingresarDatosVuelo ()
+		mostrar "¿Cual es la ciudad de destino?
+		mostrar "[C]aracas"
+		mostrar "[P]orlamar"
+		mostrar "[Pto] Ordaz"
+		leer destino
+		mostrar "Seleccione el avión que va a volar"
+		leer avion
+		mostrar "Seleccione el piloto del avión"
+		leer piloto
+		mostrar "Indique la hora de salida del vuelo"
+		leer horaSalida
+		mostrar "¿Cual es el aeropuerto donde llegará el avión?"
+		leer aeroptoDestino
+		mostrar "Ingrese la cantidad de pasajeros que viajaran en el avión"
+		leer cantPasajeros
+		esperar 2 segundos
+		limpiar pantalla
+	fin método
+	
+	//con algunos datos obtenidos se calcula el ingreso recibe la aerolinea.
+	método calcularIngresoAerolinea ()
+		segun destino hacer
+			"C": ingreso=caracas*cantPasajeros
+		
+			"P": ingreso=porlamar*cantPasajeros
+		
+			"PTO": ingreso=pto_Ordaz*cantPasajeros
+		fin segun
+		mostrar "El ingreso que percibira la aerolinea por la venta de pasajes: " ingreso " $"
+	fin método
+fin clase
+
+Algoritmo
+	definir caracas, porlamar, puerto ordaz como real
+	caracas=20
+	porlamar=30
+	pto_Ordaz=35
+	
+	definir plane como Avion
+	plane = nuevo Avion ()
+	
+	definir pilot como Piloto
+	pilot = nuevo Piloto ()
+	
+	definir vuel como Vuelo ()
+	vuel =  nuevo Vuelo
+	
+	//luego de instanciar cada objeto, se hace llamado de sus métodos.
+	plane.leerDatos ()
+	pilot.obtenerDatosPiloto()
+	vuel.ingresarDatosVuelo()
+	vuel.calcularIngresoAerolinea()
+Fin algoritmo

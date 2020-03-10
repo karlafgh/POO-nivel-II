@@ -1,0 +1,40 @@
+clase cuentasBancarias extiende instrumentosBancarios
+	privado definir porc_interes_pago, saldo como real
+	privado definir tipo_cuenta como caracter 
+
+	publico metodo cuentasBancarias() 
+		porc_interes_pago = 0
+		tipo_cuenta = k
+		saldo = 0
+	fin metodo
+	
+	publico metodo cuentasBancarias(num3,t_c,num4)
+		porc_interes_pago = num3
+		tipo_cuenta = k
+		saldo = 0
+	fin metodo
+	
+	publico metodo setporc_interes_pago(num3)
+		porc_interes_pago = num3
+	fin metodo
+	
+	publico metodo getporc_interes_pago() como real
+		retornar porc_interes_pago
+	fin metodo
+	
+	publico metodo setSaldo(num4)
+		saldo = num4
+	fin metodo
+	
+	publico metodo getSaldo() como real
+		retornar saldo
+	fin metodo
+	
+	publico metodo setTipoCuenta(t_c)
+		tipo_cuenta = t_c
+	fin metodo
+	
+	publico metodo getTipoCeunta() como caracter
+		retornar tipo_cuenta
+	fin metodo
+fin clase

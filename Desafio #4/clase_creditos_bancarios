@@ -1,0 +1,29 @@
+clase creditosBancarios extiende instrumentosBancarios
+	privado definir monto_cuota, monto_credito como real
+	
+	publico metodo creditosBancarios
+		monto_cuota = 0
+		monto_credito = 0
+	fin metodo
+	
+	publico metodo creditosBancarios(montoCuo, monto_cre)
+		monto_cuota = montoCuo
+		monto_credito = monto_cre
+	fin metodo
+	
+	publico metodo setMontoCuota(montoCuo)
+		monto_cuota = montoCuo
+	fin metodo
+	
+	publico metodo getMontoCuota() como real
+		retornar monto_cuota
+	fin metodo
+	
+	publico metodo setMontoCredito(monto_cre)
+		monto_credito = monto_cre
+	fin metodo
+	
+	publico metodo getMontoCuota() como real
+		retornar monto_credito
+	fin metodo
+fin clase

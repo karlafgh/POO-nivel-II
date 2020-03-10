@@ -1,0 +1,94 @@
+Clase Pantalon
+	Privado Definir tipo_pant Como Caraceter
+	Privado Definir precio_pant Como Caracter
+	
+	public metodo getNombre() como caracter
+		retornar nombre
+	fin metodo
+	
+	public metodo setNombre (nuevoNombre)
+		nombre = nuevoNombre
+	fin metodo
+	
+	Publico Metodo leerTipoPantalon()
+		Mostrar "Ingrese el Tipo de Pantalon"
+		leer tipo_pant
+	FinMetodo
+	
+	Publico Metodo determinarPrecio() Como Real
+		Si Mayuscula(tipo_pant)== "A" entonces
+			retornar 141.246
+		SiNo
+			Si Mayuscula(tipo_pant) == "B" entonces
+				retornar 96720
+			SiNo 
+				retornar 58900
+			FinSi		
+		FinSi		
+	FinMetodo
+FinClase
+
+Clase Cliente
+	Privado Definir nombre_cliente Como Caracter
+	Privado Definir sexo Como Caracter
+
+    Publico Metodo esMujer() Como Logico
+        retornar mayusculas(sexo) == "F"
+    FinMetodo
+
+    Publico Metodo leerDatos()
+        Mostrar "Ingrese el Nombre del Cliente"
+        leer nombre_cliente
+        Mostrar "Ingrese Sexo"
+    FinMetodo
+
+
+FinClase
+
+Clase Venta
+	Privado Definir cliente Como Cliente
+	Privado Definir pantalon Como Pantalon
+	Privado Definir cant_pantalon Como Entero
+	
+	public getCantidad () como entero
+		retornar 
+	
+    Privado Metodo leerCantidad()
+        Mostrar "Ingrese la Cantidad"
+        Leer cant_pantalon
+    FinMetodo
+
+    Publico Metodo calcularSubTotal() Como Real     //A las funciones se les colocan un tipo de dato// 
+        retornar pantalon.determinarPrecio()*cant_pantalon
+    FinMetodo
+
+    Publico Metodo calcularDescuento()
+        Si cliente.esMujer() == verdadero y cant_pantalon > 6 entonces
+            retornar calcularSubTotal()*0.1
+        Sino 
+            retornar 0
+        FinSi
+    FinMetodo
+
+    Publico Metodo calcularMontoTotal() Como Real
+        retornar 
+    FinMetodo
+
+    Publico Metodo procesarVenta()
+        cliente.leerDatos()
+        pantalon.leerTipoPantalon()
+        leerCantidad()
+    FinMetodo
+FinClase
+
+Algoritmo Practica1_Clase3
+    Definir vent Como Venta
+
+    vent = Nuevo Venta()
+
+    vent.procesarVenta()
+
+    Mostrar "El SubTotal es: " v.calcularSubTotal()
+    Mostrar "Descuento Realizado: " v.calcularDescuento()
+    Mostrar "El Monto a Pagar es: " v.
+FinAlgoritmo

@@ -1,0 +1,15 @@
+clase Banco
+	privado definir b_clientes como coleccion <Cliente>
+	
+	publico metodo getCliente() como Cliente
+		retornar cliente
+	fin metodo
+	
+	publico metodo registrarClientes(nombre, id, edad,cu_bancaria, t_credito, c_bancario)
+		b_clientes.agregar(nuevo Cliente(nombre, id, edad,cu_bancaria, t_credito, c_bancario))
+	fin metodo
+	
+	publico metodo getBClientes(i) como Cliente
+		retornar b_clientes(i)
+fin clase
+

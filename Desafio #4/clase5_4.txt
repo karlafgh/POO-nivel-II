@@ -1,0 +1,18 @@
+clase AutoBus extiende Auto
+	privado definir nroPuestos como entero
+	privado definir tieneAireAcond como logico
+
+	//constructor
+	publico metodo AutoBus()
+		nroPuestos = 8
+		tieneAireAcond = falso
+	fin metodo
+
+	publico metodo getCantidadCombustile()
+		si motor.getCombustible() == "gasolina" entonces
+			retornar 5
+		sino 
+			retornar 100
+		finsi
+	fin metodo
+fin clase

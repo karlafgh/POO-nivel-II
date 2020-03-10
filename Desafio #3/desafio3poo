@@ -1,0 +1,121 @@
+clase Alumno
+	//declaración de variables
+	privado definir nombreAlumno, correo como caracter
+	privado definir promedio, nota como entero
+	
+	Publico Metodo setnombreAlumno(nuevoNombre) 
+		nombreAlumno = nuevoNombre
+	fin metodo
+	
+	Publico Método getnombreAlumno() como caracter
+		retornar nombreAlumno
+	fin metodo
+	
+	Publico Metodo setcorreoAlumno() 
+		correoAlumno = nuevoCorreo
+	fin metodo
+	
+	Publico Método getcorreoAlumno() como caracter
+		retornar correoAlumno
+	fin metodo
+	
+	//metodo para obtener la notas del alumno.
+	Publico metodo obtenerNotas(acumulador por referencia)
+		acumulador=0
+		Para i=1 hasta 4 hacer
+			repetir
+				mostrar "ingrese la nota #" i "del alumno"
+				leer nota
+				si nota<0 o nota>100 entonces
+					mostrar "¡Error!"
+					mostrar "La nota debe estar entre 0 y 100 puntos."
+				sino
+					acumulador=acumulador+nota
+				FinSi
+			hasta que nota>=0 y nota<=100
+		FinPara
+		limpiar pantalla
+	fin metodo
+	
+	//metodo para determinar el promedio del alumno segun las notas ingresadas.
+	Público método determinarPromedio(acumulador) como entero
+		retornar promedio=acumulador/4
+	fin metodo
+
+	Público metodo aproboMateria(promedio) como logico
+		Si promedio>=80 entonces
+			retornar verdadero
+		sino
+			retornar falso
+		finsi
+	fin metodo
+fin clase
+
+clase Sección
+	//declaración de variables
+	privado definir numSeccion, cantAlumno como entero
+	privado definir curso como caracter
+	privado definir alumno como Alumno
+	
+	//metodo para registrar la determinada sección.
+	Publico metodo obtenerDatos()
+		mostrar "Responda las siguientes interrogantes para registrar la sección..."
+		mostrar ""
+		mostrar "¿Cual es el número de la sección?"
+		leer numSeccion
+		mostrar ""
+		mostrar "¿A que curso pertenece la sección?"
+		leer curso 
+		mostrar ""
+		mostrar "¿Cuantos estudiantes conformarán a la sección?"
+		leer cantAlumno
+		esperar 1 segundo
+		limpiar pantalla
+	fin metodo
+	
+	Publico metodo setnumSeccion (nuevoNumSeccion)
+		numSeccion=nuevoNumSeccion
+	fin metodo
+	
+	Publico metodo getnumSeccion () entero
+		retornar numSeccion
+	fin metodo
+	
+	Publico metodo setcurso (nuevoCurso)
+		curso = nuevoCurso
+	fin metodo
+	
+	Publico metodo getcurso () caracter
+		retornar curso
+	fin metodo
+	
+	Publico metodo setcantAlumno (nuevoCantAlumno)
+		cantAlumno= nuevoCantAlumno
+	fin metodo
+	
+	Publico metodo getcantAlumno () entero
+		retornar cantAlumno
+	fin metodo
+fin clase
+
+Algoritmo
+	definir S como Seccion
+	S = nuevo Seccion ()
+	
+	//se hace el llamado a los siguientes métodos en el cuerpo principal.
+	s.obtenerDatos()
+	s.alumno.obtenerNotas ()
+	s.alumno.determinarPromedio ()
+	
+	//establezco que el nombre del alumno es James Rodriguez.
+	s.alumno.setNombreAlumno("James Rodriguez")
+	
+	//se muestran estos mensajes como salida dependiendo del promedio final del alumno.
+	si s.alumno.aproboMateria () entonces
+		mostrar "¡Felicidades, " s.alumno.getnombreAlumno()
+		mostrar "Has aprobado la materia."
+	sino 
+		mostrar s.alumno.getnombreAlumno() ", lamentamos informarte que no aprobaste la materia."
+		mostrar "Esfuerzate más para la proxima."
+	finsi
+FinAlgoritmo

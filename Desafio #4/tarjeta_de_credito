@@ -1,0 +1,42 @@
+clase tarjetasDeCredito extiende instrumentosBancarios
+	privado definir monto_maximo, saldo como real
+	privado definir fecha_pago como Fecha
+	
+	//constructor por defecto.
+	publico metodo tarjetaDeCredito()
+		monto_maximo = 0
+		saldo = 0
+		fecha_pago = nuevo Fecha()
+	fin metodo
+	
+	//constructor por defecto.
+	publico metodo tarjetasDeCredito(num1, num2, f_p)
+		monto_maximo = num1
+		saldo = num2
+		fecha_pago = f_p
+	fin metodo
+	
+	publico metodo setFechaPago(f_p)
+		fecha_pago = f_p
+	fin metodo
+	
+	publico metodo getFechaAdquirida() como fecha
+		retornar fecha_pago
+	fin metodo
+	
+	publico metodo setMontoMaximo(num1)
+		monto_maximo = num
+	fin metodo
+	
+	publico metodo getMontoMaximo() como real
+		retornar monto_maximo
+	fin metodo
+	
+	publico metodo setSaldo(num2)
+		saldo = num
+	fin metodo
+	
+	publico metodo getSaldo() como real
+		retornar saldo
+	fin metodo
+fin clase

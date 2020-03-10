@@ -1,0 +1,81 @@
+Algoritmo desafio 4
+	definir cant_cliente, ci, age como entero
+	definir  monto_credito, monto_cuota, saldo1, monto_mx, saldo, porc_interes_pago como real
+	dfinir nomb, respuesta, answer, tipo_cuenta como caracter 
+	definir b como Banco
+	bank = nuevo Banco
+	
+	mostrar "Bienvenido al banco Cadi F1"
+	mostrar "¿Cuantos clientes se registrarán?"
+	mostrar "" sin saltar 
+	leer cant_cliente
+	
+	para i =1 hasta cant_cliente
+	
+		mostrar "Indique el nombre del cliente n° " i
+		leer nomb
+		mostrar "Ingrese la cedula de identidad"
+		leer ci
+		mostrar "Ingrese la edad del cliente"
+		leer age
+		mostrar ""
+		mostrar "Seleccione el instrumento bancario que requiera el cliente"
+		mostrar "a) Cuentas bancarias"
+		mostrar "b) Tarjetas de créditos"
+		mostrar "c) Créditos bancarios"
+		leer anwer
+		
+		si answer = a entonces
+			mostrar "Ingrese los siguientes datos para registrar una cuenta bancaria"
+			mostrar "Porcentaje de Interes:"
+			leer porc_interes_pago
+			mostrar "Saldo:"
+			saldo1
+			mostrar "Tipo de cuenta:"
+			tipo_cuenta
+		fin si
+		
+		si answer = b entonces
+			mostrar "Ingrese los siguientes datos para registrar una cuenta Tarjeta De Credito"
+			mostrar "Monto Maximo:"
+			leer monto_mx
+			mostrar "Saldo:"
+			leer saldo
+			mostrar "Fecha pago (mm/dd/yy)"
+			leer fecha_pago
+		finsi
+		
+		si answer = c entonces
+			mostrar "Ingrese los siguientes datos para registrar un Credito bancario"
+			mostrar "Monto cuota:"
+			leer monto_cuota
+			mostrar "Monto Credito"
+			leer monto_credito
+		fin si
+		bank.b_clientes.agregar(nuevo Cliente(nombre, id, edad,cu_bancaria, t_credito, c_bancario))
+	fin para
+	
+	esperar 1 segundo
+	borrar pantalla
+	
+	repetir
+		mostrar "¿Desea ver los clientes registrados (s)Si/(n)No?"
+		leer respuesta
+		respuesta = Mayusculas(respuesta)
+		
+		si respuesta = "S" entonces
+			para i = 1 hasta cant_cliente
+				mostrar "El nombre del cliente n° " i " es: " bank.b_clientes[i].getNombre() 
+				mostrar ""
+			fin para
+		sino
+			si respuesta = "N" entonces
+				mostrar "!Hasta pronto!"
+			sino 
+				mostrar "Error. Debes ingresar S o N."
+				mostrar ""
+			finsi
+		fin si 
+		
+	hasta que respuesta = "S" o respuesta = "N"
+fin algoritmo

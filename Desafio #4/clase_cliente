@@ -1,0 +1,71 @@
+clase Cliente
+	privado definir nombre como caracter
+	privado definir id, edad como entero
+	privado definir cu_bancaria como coleccion <cuentaBancaria>
+	privado definir t_credito como coleccion <tarjetasDeCredito>
+	privado definir c_bancario como coleccion <creditosBancarios>
+	
+	publico metodo Cliente()
+		nombre = k
+		id = 0
+		edad = 0
+	fin metodo
+	
+	publico metodo Cliente(nomb, ci, age)
+		nombre = nomb
+		id = ci
+		edad = age
+		cedula = nuevaCedula
+		cu_bancaria.agregar(cb_n)
+        t_credito.agregar(tc_n)
+        c_bancario.agregar(c_b_n)
+	fin metodo
+
+	publico metodo setNombre(nomb)
+		nombre = nomb
+	fin metodo
+	
+	publico metodo getNombre() como caracter
+		retornar nombre
+	fin metodo
+	
+	publico metodo setID(ci)
+		id = ci
+	fin metodo
+	
+	publico metodo getID() como entero
+		retornar id
+	fin metodo
+	
+	publico metodo setEdad(age)
+		edad = age
+	fin metodo
+	
+	publico metodo getEdad() como entero
+		retornar edad
+	fin metodo
+	
+	publico metodo registrarCuentaBancaria(cb_n)
+        cu_bancaria.agregar(cb_n)
+    fin todo
+
+    publico metodo getCuenta(i) como cuentasBancarias
+        retornar  cu_bancaria[i]
+    fin metodo
+	
+    publico metodo registrarCredito(c_b_n)
+        c_bancario.agregar(c_b_n)
+    fin metodo
+
+    publico metodo getCredito(i) como creditosBancarios 
+        retornar c_bancario[i]
+    fin metodo
+	
+	publico metodo registrarTarjetaDeCredito(tc_n)
+        t_credito.agregar(tc_n)
+    fin metodo
+
+    publico metodo getTarCr(i) como tarjetasDeCredito
+        retornar t_credito[i]
+    fin metodo
+fin clase
